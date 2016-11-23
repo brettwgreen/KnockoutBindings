@@ -1,0 +1,12 @@
+.container {
+  width: 200px;
+  height: 100px;
+}
+.child {
+  padding-left: 20px;
+}
+
+.toggle {
+  float: right;
+  padding-left: 50px;
+}
