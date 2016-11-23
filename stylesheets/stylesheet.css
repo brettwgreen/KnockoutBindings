@@ -236,7 +236,16 @@ form {
   background: #f2f2f2;
 
 }
-
+.backArrow {
+	background-image: url('../images/back.png');
+	background-size: 20px 20px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin-right: 15px;
+}
 
 /* GENERAL ELEMENT TYPE STYLES */
 
