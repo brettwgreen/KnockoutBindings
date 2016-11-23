@@ -14,3 +14,7 @@ static binding
 Also supports observable binding for all properties
 
 `<div data-bind="transitionVisible: itemVisible, transition: obsTransition, easing: obsEasing, duration: obsDuration">text to toggle</div>`
+
+Plunkr:
+
+https://plnkr.co/edit/QBnS2WsSelI5Mhrk2R5v?p=preview
