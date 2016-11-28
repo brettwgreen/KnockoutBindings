@@ -25,6 +25,10 @@ ko.bindingHandlers.transitionVisible = {
           case "slide":
             $(element).slideToggle(duration, easing);
             break;
+		  // These require jQuery UI
+		  case "bounce":
+            $(element).toggle(transition, {easing: easing}, duration);
+            break;
           default:
             $(element).fadeToggle(duration, easing);
             break;
