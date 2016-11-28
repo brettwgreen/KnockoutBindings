@@ -32,8 +32,7 @@ $(document).ready(function() {
 		  new List({effect: 'scale', effectOptions: {easing: 'swing'}, duration: 500}),
 		  new List({effect: 'shake', effectOptions: {easing: 'swing'}, duration: 500}),
 		  new List({effect: 'shake', effectOptions: {easing: 'swing', distance: 60, times: 10}, duration: 2000}),
-		  new List({effect: 'size', effectOptions: {easing: 'swing'}, duration: 500}),
-		  new List({effect: 'transfer', effectOptions: {easing: 'swing'}, duration: 500})
+		  new List({effect: 'size', effectOptions: {easing: 'swing'}, duration: 500})
 		];
 	};
 

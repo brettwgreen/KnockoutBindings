@@ -41,7 +41,6 @@ ko.bindingHandlers.transitionVisible = {
 		  case "scale":
 		  case "shake":
 		  case "size":
-		  case "transfer":
             $(element).toggle(effect, effectOptions, duration);
             break;
           default:
