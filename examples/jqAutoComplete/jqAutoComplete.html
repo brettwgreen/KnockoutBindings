@@ -39,11 +39,15 @@
                 [
                 <!-- ko foreach: characters -->
                     "<span data-bind="text: $data"></span>"
-                    <span data-bind="visible: $index() < ($parent.characters.length-1)">,</span>
+                    <span data-bind="visible: $index() < ($parent.characters().length-1)">,</span>
                 <!-- /ko -->
                 ]
                 </div>
                 <br />
+                <label for="characterAdd">Add a character name to list: </label>
+                <input type="text" id="characterAdd" data-bind="value: newCharacter"> <button data-bind="click: addCharacter">add</button>
+                <br/><br/>
+                
                 <label for="autoComplete">Type a character name: </label>
 				<input type="text" id="autoComplete" data-bind="jqAutoComplete: selectedCharacter, source: characters" >
                 <br clear="all"><br />
