@@ -36,12 +36,18 @@ $(document).ready(function() {
 		  new List({effect: 'foo', effectOptions: {easing: 'swing'}, duration: 500})
 		];
         
+        self.transitionEvents = ko.observableArray([]);
         self.showExplode = ko.observable(true);
         self.toggleExplode = function() {
             self.showExplode(!self.showExplode());
         };
         self.explodeComplete = function() {
-            alert("It asploded!");
+            if (self.showExplode()) {
+                self.transitionEvents.push("It imploded");
+            }
+            else {
+                self.transitionEvents.push("It exploded");                
+            }
         }
 	};
     

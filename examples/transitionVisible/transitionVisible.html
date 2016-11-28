@@ -65,6 +65,11 @@
                         <div class="child">Child 4</div>
 					</div>
 				</div>
+                <div class="transitionEvents">
+                    <!-- ko foreach: transitionEvents -->
+                    <div data-bind="text: $data"></div>
+                    <!-- /ko -->
+                </div>
             
 			<br clear="all">
 			</section>

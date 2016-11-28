@@ -22,12 +22,21 @@
 .child {
 	margin-left: 20px;
 }
-
 .toggle {
 	float: left;
 	margin-left: 10px;
 }
-
+.transitionEvents {
+    border: 1px solid steelblue;
+    width: 200px;
+    height: 160px;
+    background-color: #fff;
+    overflow: auto;
+}
+.transitionEvents div {
+    padding: 2px;
+    border-bottom: 1px solid #999;
+}
 #target {
 	background-color: #efefef;
 	float: left;
