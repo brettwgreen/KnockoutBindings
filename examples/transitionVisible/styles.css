@@ -1,15 +1,18 @@
 .toggleContainer {
-	height: 150px;
+	height: 200px;
 	width: 250px;
 	float: left;
 	margin-left: 20px;
 }
 .parent {
 	float: left;
+	font-weight: bold;
 }
 .details {
 	clear: both;
 	height: 15px;
+	padding-left: 5px;
+	font-style: italic;
 }
 .childContainer {
 	background-color: #fff;

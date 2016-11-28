@@ -31,6 +31,7 @@ $(document).ready(function() {
 		  new List({transition: 'pulsate', options: {easing: 'swing'}, duration: 500}),
 		  new List({transition: 'scale', options: {easing: 'swing'}, duration: 500}),
 		  new List({transition: 'shake', options: {easing: 'swing'}, duration: 500}),
+		  new List({transition: 'shake', options: {easing: 'swing', distance: 60, times: 10}, duration: 2000}),
 		  new List({transition: 'size', options: {easing: 'swing'}, duration: 500}),
 		  new List({transition: 'transfer', options: {easing: 'swing'}, duration: 500})
 		];
