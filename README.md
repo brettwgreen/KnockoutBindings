@@ -21,7 +21,8 @@ static binding
 <div data-bind="transitionVisible: itemVisible, 
              effect: 'explode', 
              effectOptions: {easing: 'swing', pieces: 4}, 
-             duration: 1000">text to toggle</div>
+             duration: 1000,
+             effectComplete: completedFunction">text to toggle</div>
 ```
 
 Also supports observable binding for all properties
