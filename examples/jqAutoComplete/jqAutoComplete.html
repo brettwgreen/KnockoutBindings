@@ -34,8 +34,21 @@
 			</header>
 			
 			<section id="main_content">		
+                <label for="characters">Available characters: </label>
+                <div id="characters">
+                [
+                <!-- ko foreach: characters -->
+                    "<span data-bind="text: $data"></span>"
+                    <span data-bind="visible: $index() < ($parent.characters.length-1)">,</span>
+                <!-- /ko -->
+                ]
+                </div>
+                <br />
+                <label for="autoComplete">Type a character name: </label>
 				<input type="text" id="autoComplete" data-bind="jqAutoComplete: selectedCharacter, source: characters" >
-			<br clear="all">
+                <br clear="all"><br />
+                <label for="selectedCharacter">Selected Character: </label>
+                <div id="selectedCharacter" data-bind="text: selectedCharacter"></div>
 			</section>
 		</div>
 	</div>
