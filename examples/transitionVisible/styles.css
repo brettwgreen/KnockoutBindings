@@ -1,12 +1,26 @@
 .toggleContainer {
-  width: 200px;
-  height: 150px;
+	height: 150px;
+	width: 250px;
+	float: left;
+	margin-left: 20px;
+}
+.parent {
+	float: left;
+}
+.details {
+	clear: both;
+	height: 15px;
+}
+.childContainer {
+	background-color: #fff;
+	border: 1px solid #777;
+	width: 150px;
 }
 .child {
-  padding-left: 20px;
+	margin-left: 20px;
 }
 
 .toggle {
-  float: right;
-  padding-left: 50px;
+	float: left;
+	margin-left: 10px;
 }

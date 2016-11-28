@@ -16,9 +16,10 @@ ko.bindingHandlers.transitionVisible = {
       var visible = ko.unwrap(value);
       if (initialized) {
         var transition = allBindings.has('transition') ? ko.unwrap(allBindings.get('transition')) : 'fade';
-        var easing = allBindings.has('easing') ? ko.unwrap(allBindings.get('easing')) : 'swing';
         var duration = allBindings.has('duration') ? ko.unwrap(allBindings.get('duration')) : 500;
-        switch (transition) {
+        var transitionOptions = allBindings.has('transitionOptions') ? ko.unwrap(allBindings.get('transitionOptions')) : {easing: 'swing'};		
+		var easing = transitionOptions.easing ? transitionOptions.easing : 'swing';
+		switch (transition) {
           case "fade":
             $(element).fadeToggle(duration, easing);
             break;
@@ -26,8 +27,20 @@ ko.bindingHandlers.transitionVisible = {
             $(element).slideToggle(duration, easing);
             break;
 		  // These require jQuery UI
+		  case "blind":
 		  case "bounce":
-            $(element).toggle(transition, {easing: easing}, duration);
+		  case "clip":
+		  case "drop":
+		  case "explode":
+		  case "fold":
+		  case "highlight":
+		  case "puff":
+		  case "pulsate":
+		  case "scale":
+		  case "shake":
+		  case "size":
+		  case "transfer":
+            $(element).toggle(transition, transitionOptions, duration);
             break;
           default:
             $(element).fadeToggle(duration, easing);
