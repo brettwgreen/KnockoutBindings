@@ -1,7 +1,8 @@
 # KnockoutBindings
 A collection of custom knockout binding handlers
 
-*transitionVisible*
+**transitionVisible**
+
 Show/hide elements with bindable transitions and settings
 Uses jquery effects
 
