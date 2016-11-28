@@ -28,20 +28,20 @@ Also supports observable binding for all properties
 For jQuery, only the 'fade' and 'slide' effects are available and supports only the easing and duration properties.
 
 In the presence of jQuery UI, all of the following effects are supported with any options passed into the effectOptions property:
-    fade
-    slide
-    blind
-    bounce
-    clip
-    drop
-    explode
-    fold
-    highlight
-    puff
-    pulsate
-    scale
-    shake
-    size
+- fade
+- slide
+- blind
+- bounce
+- clip
+- drop
+- explode
+- fold
+- highlight
+- puff
+- pulsate
+- scale
+- shake
+- size
 
 Examples:
 https://brettwgreen.github.io/KnockoutBindings/examples/transitionVisible/transitionVisible.html
