@@ -53,3 +53,7 @@ In the presence of jQuery UI, all of the following effects are supported with an
 
 Examples:
 https://brettwgreen.github.io/KnockoutBindings/examples/transitionVisible/transitionVisible.html
+
+Plunkr:
+https://plnkr.co/edit/QBnS2WsSelI5Mhrk2R5v?p=preview
+
