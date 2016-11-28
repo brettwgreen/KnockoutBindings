@@ -12,6 +12,8 @@ ko.bindingHandlers.transitionVisible = {
     update: function(element, valueAccessor, allBindings) {
       // Initialize without toggling on initial binding
       var initialized = ko.utils.domData.get(element, 'initialized');
+	  // By only examining the bound visible property on first call, it means knockout will
+	  // only call update for that bound property, and not on any of the bindable effect properties... 		 
       var value = valueAccessor();
       var visible = ko.unwrap(value);
       if (initialized) {
