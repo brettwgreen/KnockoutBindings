@@ -15,11 +15,11 @@ ko.bindingHandlers.transitionVisible = {
       var value = valueAccessor();
       var visible = ko.unwrap(value);
       if (initialized) {
-        var transition = allBindings.has('transition') ? ko.unwrap(allBindings.get('transition')) : 'fade';
+        var effect = allBindings.has('effect') ? ko.unwrap(allBindings.get('effect')) : 'fade';
         var duration = allBindings.has('duration') ? ko.unwrap(allBindings.get('duration')) : 500;
-        var transitionOptions = allBindings.has('transitionOptions') ? ko.unwrap(allBindings.get('transitionOptions')) : {easing: 'swing'};		
-		var easing = transitionOptions.easing ? transitionOptions.easing : 'swing';
-		switch (transition) {
+        var effectOptions = allBindings.has('effectOptions') ? ko.unwrap(allBindings.get('effectOptions')) : {easing: 'swing'};		
+		var easing = effectOptions.easing ? effectOptions.easing : 'swing';
+		switch (effect) {
           case "fade":
             $(element).fadeToggle(duration, easing);
             break;
@@ -40,7 +40,7 @@ ko.bindingHandlers.transitionVisible = {
 		  case "shake":
 		  case "size":
 		  case "transfer":
-            $(element).toggle(transition, transitionOptions, duration);
+            $(element).toggle(effect, effectOptions, duration);
             break;
           default:
             $(element).fadeToggle(duration, easing);

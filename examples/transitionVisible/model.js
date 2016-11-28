@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	var List = function(data) {
 	  var self = this;
-	  self.transition = data.transition ? data.transition : 'fade';
+	  self.effect = data.effect ? data.effect : 'fade';
 	  self.duration = data.duration ? data.duration : 400;
-	  self.options = data.options ? data.options : {easing: 'swing'};
+	  self.effectOptions = data.effectOptions ? data.effectOptions : {easing: 'swing'};
 	  self.children = [{name: "Child 1"}, {name: "Child 2"}, {name: "Child 3"}, {name: "Child 4"}];
 	  self.showChildren = ko.observable(true);
 	  self.toggleChildren = function() {
@@ -14,26 +14,26 @@ $(document).ready(function() {
 	var ViewModel = function() {
 	  var self = this;
 	  self.parents = [
-		  new List({transition: 'fade', options: { easing: 'linear'}, duration: 200}),
-		  new List({transition: 'slide', options: {easing: 'swing'}, duration: 1000}),
-		  new List({transition: 'bounce', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'blind', options: {easing: 'swing', direction: 'up'}, duration: 500}),
-		  new List({transition: 'blind', options: {easing: 'swing', direction: 'down'}, duration: 500}),
-		  new List({transition: 'blind', options: {easing: 'swing', direction: 'left'}, duration: 500}),
-		  new List({transition: 'blind', options: {easing: 'swing', direction: 'right'}, duration: 500}),
-		  new List({transition: 'clip', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'drop', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'explode', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'explode', options: {easing: 'swing', pieces: 4}, duration: 500}),
-		  new List({transition: 'fold', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'highlight', options: {easing: 'swing', color: 'steelblue'}, duration: 500}),
-		  new List({transition: 'puff', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'pulsate', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'scale', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'shake', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'shake', options: {easing: 'swing', distance: 60, times: 10}, duration: 2000}),
-		  new List({transition: 'size', options: {easing: 'swing'}, duration: 500}),
-		  new List({transition: 'transfer', options: {easing: 'swing'}, duration: 500})
+		  new List({effect: 'fade', effectOptions: { easing: 'linear'}, duration: 200}),
+		  new List({effect: 'slide', effectOptions: {easing: 'swing'}, duration: 1000}),
+		  new List({effect: 'bounce', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'blind', effectOptions: {easing: 'swing', direction: 'up'}, duration: 500}),
+		  new List({effect: 'blind', effectOptions: {easing: 'swing', direction: 'down'}, duration: 500}),
+		  new List({effect: 'blind', effectOptions: {easing: 'swing', direction: 'left'}, duration: 500}),
+		  new List({effect: 'blind', effectOptions: {easing: 'swing', direction: 'right'}, duration: 500}),
+		  new List({effect: 'clip', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'drop', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'explode', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'explode', effectOptions: {easing: 'swing', pieces: 4}, duration: 500}),
+		  new List({effect: 'fold', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'highlight', effectOptions: {easing: 'swing', color: 'steelblue'}, duration: 500}),
+		  new List({effect: 'puff', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'pulsate', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'scale', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'shake', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'shake', effectOptions: {easing: 'swing', distance: 60, times: 10}, duration: 2000}),
+		  new List({effect: 'size', effectOptions: {easing: 'swing'}, duration: 500}),
+		  new List({effect: 'transfer', effectOptions: {easing: 'swing'}, duration: 500})
 		];
 	};
 

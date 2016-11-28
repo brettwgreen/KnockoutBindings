@@ -35,17 +35,17 @@
 					
 			<!-- ko foreach: parents -->
 				<div class="toggleContainer">
-					<div class="parent" data-bind="text: transition + ' example'"></div>
-					<button class="toggle" data-bind="click: toggleChildren, text: transition"></button>
+					<div class="parent" data-bind="text: effect + ' example'"></div>
+					<button class="toggle" data-bind="click: toggleChildren, text: effect"></button>
 					<div class="details">
-						<!-- ko foreach: {data: Object.keys(options), as: 'key' }-->
+						<!-- ko foreach: {data: Object.keys(effectOptions), as: 'key' }-->
 						<!-- ko if: key !== 'easing' -->
-							<span data-bind="text: key"></span>: <span data-bind="text: $parent.options[key]"></span> 
+							<span data-bind="text: key"></span>: <span data-bind="text: $parent.effectOptions[key]"></span> 
 						<!-- /ko -->
 						<!-- /ko -->
 					</div>
 					<br clear="all"/>
-					<div class="childContainer" data-bind="transitionVisible: showChildren, transitionOptions: options, transition: transition, duration: duration">
+					<div class="childContainer" data-bind="transitionVisible: showChildren, effect: effect, effectOptions: effectOptions, duration: duration">
 					<!-- ko foreach: children -->
 						<div data-bind="text: name" class="child"></div>
 					<!-- /ko -->
