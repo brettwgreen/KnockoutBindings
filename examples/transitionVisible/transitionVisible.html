@@ -33,6 +33,7 @@
 			
 			<section id="main_content">		
 					
+            <div id="effectExamples">
 			<!-- ko foreach: parents -->
 				<div class="toggleContainer">
 					<div class="parent" data-bind="text: effect + ' example'"></div>
@@ -52,8 +53,9 @@
 					</div>
 				</div>
 			<!-- /ko -->
+            </div>
                 <br  clear="all" />
-                <br />
+                <hr size="1">
                 <div class="toggleContainer">
 					<div class="parent">Effect complete example</div>
 					<button class="toggle" data-bind="click: toggleExplode">Test complete function</button>
