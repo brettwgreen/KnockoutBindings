@@ -20,14 +20,18 @@ ko.bindingHandlers.transitionVisible = {
             var effect = allBindings.has('effect') ? ko.unwrap(allBindings.get('effect')) : 'fade';
             var duration = allBindings.has('duration') ? ko.unwrap(allBindings.get('duration')) : 500;
             var effectOptions = allBindings.has('effectOptions') ? ko.unwrap(allBindings.get('effectOptions')) : {easing: 'swing'};		
+            var complete = allBindings.has('effectComplete') ? ko.unwrap(allBindings.get('effectComplete')) : null;
+            if (typeof complete !== 'function') {
+                complete = null;
+            }
             var easing = effectOptions.easing ? effectOptions.easing : 'swing';
             if (!jQuery.ui) {
                 switch (effect) {
                     case "fade":
-                        $(element).fadeToggle(duration, easing);
+                        $(element).fadeToggle(duration, easing, complete);
                         break;
                     case "slide":
-                        $(element).slideToggle(duration, easing);
+                        $(element).slideToggle(duration, easing, complete);
                         break;
                     case "blind":
                     case "bounce":
@@ -42,15 +46,13 @@ ko.bindingHandlers.transitionVisible = {
                     case "shake":
                     case "size":
                         if (window.console) {
-                            console.log("No jQueryUI present, so no support for '" + effect + "'. Defaulting to fade effect.");
+                            console.log("No jQueryUI present, so no support for '" + effect + "'");
                         }
-                        $(element).fadeToggle(duration, easing);
-                        break;
                     default:
                         if (window.console) {
                             console.log("Unkwown effect '" + effect + "'. Defaulting to fade effect.");
                         }
-                        $(element).fadeToggle(duration, easing);
+                        $(element).fadeToggle(duration, easing, complete);
                     break;                
                 }
             }
@@ -70,13 +72,13 @@ ko.bindingHandlers.transitionVisible = {
                     case "scale":
                     case "shake":
                     case "size":
-                        $(element).toggle(effect, effectOptions, duration);
+                        $(element).toggle(effect, effectOptions, duration, complete);
                         break;
                     default:
                         if (window.console) {
                             console.log("Unkwown effect '" + effect + "'. Defaulting to fade effect.");
                         }
-                        $(element).fadeToggle(duration, easing);
+                        $(element).fadeToggle(duration, easing, complete);
                         break;
                 }
             }

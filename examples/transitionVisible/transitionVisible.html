@@ -52,6 +52,20 @@
 					</div>
 				</div>
 			<!-- /ko -->
+                <br  clear="all" />
+                <br />
+                <div class="toggleContainer">
+					<div class="parent">Effect complete example</div>
+					<button class="toggle" data-bind="click: toggleExplode">Test complete function</button>
+					<br clear="all"/><br />
+					<div class="childContainer" data-bind="transitionVisible: showExplode, effect: 'explode', duration: 1000, effectComplete: explodeComplete">
+                        <div class="child">Child 1</div>
+                        <div class="child">Child 2</div>
+                        <div class="child">Child 3</div>
+                        <div class="child">Child 4</div>
+					</div>
+				</div>
+            
 			<br clear="all">
 			</section>
 		</div>

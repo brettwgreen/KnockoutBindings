@@ -35,8 +35,16 @@ $(document).ready(function() {
 		  new List({effect: 'size', effectOptions: {easing: 'swing'}, duration: 500}),
 		  new List({effect: 'foo', effectOptions: {easing: 'swing'}, duration: 500})
 		];
+        
+        self.showExplode = ko.observable(true);
+        self.toggleExplode = function() {
+            self.showExplode(!self.showExplode());
+        };
+        self.explodeComplete = function() {
+            alert("It asploded!");
+        }
 	};
-
+    
 	var vm = new ViewModel;
 	ko.applyBindings(vm);
 });
