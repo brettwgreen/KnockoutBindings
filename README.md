@@ -11,8 +11,8 @@ static binding
 
 ```html
 <div data-bind="transitionVisible: itemVisible, 
-             transition: 'slide', 
-             easing: 'linear', 
+             effect: 'slide', 
+             effectOptions: {easing: 'linear'}, 
              duration: 1000">text to toggle</div>
 ```
 
@@ -20,11 +20,10 @@ Also supports observable binding for all properties
 
 ```html
 <div data-bind="transitionVisible: itemVisible, 
-             transition: obsTransition, 
-             easing: obsEasing, 
+             effect: obsTransition, 
+             effectOtions: {easing: obsEasing}, 
              duration: obsDuration">text to toggle</div>
 ```
 
-Plunkr:
-
-https://plnkr.co/edit/QBnS2WsSelI5Mhrk2R5v?p=preview
+Examples:
+https://brettwgreen.github.io/KnockoutBindings/examples/transitionVisible/transitionVisible.html
