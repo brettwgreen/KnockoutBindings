@@ -34,7 +34,7 @@
 			</header>
 			
 			<section id="main_content">		
-                <label for="characters">Available characters: </label>
+                <label for="characters">Available characters (simple array): </label>
                 <div id="characters">
                 [
                 <!-- ko foreach: characters -->
@@ -44,15 +44,39 @@
                 ]
                 </div>
                 <br />
-                <label for="characterAdd">Add a character name to list: </label>
+                <label for="characterAdd">Add a character name to list:&nbsp;&nbsp;</label>
                 <input type="text" id="characterAdd" data-bind="value: newCharacter"> <button data-bind="click: addCharacter">add</button>
                 <br/><br/>
                 
-                <label for="autoComplete">Type a character name: </label>
+                <label for="autoComplete">Type a character name:&nbsp;&nbsp;</label>
 				<input type="text" id="autoComplete" data-bind="jqAutoComplete: selectedCharacter, source: characters" >
                 <br clear="all"><br />
-                <label for="selectedCharacter">Selected Character: </label>
-                <div id="selectedCharacter" data-bind="text: selectedCharacter"></div>
+                <label for="selectedCharacter">Selected Character:&nbsp;&nbsp;</label>
+                <div class="result" id="selectedCharacter" data-bind="text: selectedCharacter"></div>
+                <hr>
+                <label for="characters">Available characters (complex json array): </label>
+                <div id="characters">
+                [
+                <!-- ko foreach: charactersComplex -->
+                    <span data-bind="text: '{first: ' + first + ', last: ' + last + '}'"></span>
+                    <span data-bind="visible: $index() < ($parent.charactersComplex().length-1)">,</span>
+                <!-- /ko -->
+                ]
+                </div>
+                <br />
+                <label for="first">Add a character name to list:&nbsp;&nbsp;</label>
+                <input type="text" id="first" data-bind="value: first"> 
+                <input type="text" id="last" data-bind="value: last"> <button data-bind="click: addCharacterComplex">add</button>
+                <br/><br/>
+                
+                <label for="autoCompleteComplex">Type a character name:&nbsp;&nbsp;</label>
+				<input type="text" id="autoCompleteComplex" data-bind="jqAutoComplete: selectedCharacterComplex, source: charactersComplexStrings" >
+                <br clear="all"><br />
+                <label for="selectedCharacterFirst">Selected First:&nbsp;&nbsp;</label>
+                <div class="result" id="selectedCharacterFirst" data-bind="text: selectedCharacterComplex().first"></div>                
+                
+                <label for="selectedCharacterLast">Selected Last:&nbsp;&nbsp;</label>
+                <div class="result" id="selectedCharacterLast" data-bind="text: selectedCharacterComplex().last"></div>                
 			</section>
 		</div>
 	</div>

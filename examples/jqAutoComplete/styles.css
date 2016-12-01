@@ -27,8 +27,13 @@
 	float: left;
 	margin-left: 10px;
 }
-
+.result {
+    clear: both;
+}
 #target {
 	background-color: #efefef;
 	float: left;
+}
+label {
+    float: left;
 }
