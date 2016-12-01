@@ -33,7 +33,7 @@ $(document).ready(function() {
         });
 
          self.addCharacterComplex = function(first, last) {
-            self.charactersComplex.push(self.first(), self.last());
+            self.charactersComplex.push({first: self.first(), last: self.last()});
         };
 
 };
