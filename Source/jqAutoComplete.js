@@ -7,6 +7,13 @@ ko.bindingHandlers.jqAutoComplete = {
             var config =
             {
             source: source,
+            focus: 
+                function(event, ui) {
+                    // Set the value of the selected observable (can be an object)
+                    va(ui.item.value);
+                    // Merge label and value to show a string in the selection box
+                    ui.item.value = ui.item.label;
+                },
             select: 
                 function(event, ui) {
                     // Set the value of the selected observable (can be an object)

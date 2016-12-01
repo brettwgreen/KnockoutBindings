@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../../stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">    
+    <script src="https://unpkg.com/@reactivex/rxjs@5.0.0-rc.2/dist/global/Rx.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="../../Source/rxjsAutoComplete.js"></script>
+	<script src="model.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>KnockoutBindings by brettwgreen</title>
+  </head>
+
+	<body>
+		<div id="container">
+		  <div class="inner">
+
+			<header>
+			  <a href='/KnockoutBindings'><div class="backArrow"></div>Go Back</a>
+			  <h1>KnockoutBindings</h1>
+			  <h2>A collection of custom knockout binding handlers</h2>
+			  <h3>rxjsAutoComplete examples</h3>
+			</header>
+			
+			<section id="main_content">		
+                <label for="characters">Available characters (simple array): </label>
+                <div id="characters">
+                [
+                <!-- ko foreach: characters -->
+                    "<span data-bind="text: $data"></span>"
+                    <span data-bind="visible: $index() < ($parent.characters().length-1)">,</span>
+                <!-- /ko -->
+                ]
+                </div>
+                <br />
+                <label for="characterAdd">Add a character name to list:&nbsp;&nbsp;</label>
+                <input type="text" id="characterAdd" data-bind="value: newCharacter"> <button data-bind="click: addCharacter">add</button>
+                <br/><br/>
+                
+                <label for="autoComplete">Type a character name:&nbsp;&nbsp;</label>
+				<input type="text" id="autoComplete" data-bind="rxjsAutoComplete: selectedCharacter, source: search" >
+                <br clear="all"><br />
+                <label for="selectedCharacter">Selected Character:&nbsp;&nbsp;</label>
+                <div class="result" id="selectedCharacter" data-bind="text: selectedCharacter"></div>
+                <hr>
+
+			</section>
+		</div>
+	</div>
+</body>
+
+</html>
