@@ -30,6 +30,17 @@
 .result {
     clear: both;
 }
+#autoComplete {
+    width: 300px;
+}
+.rxJsAutoCompleteResults {
+    position: absolute;
+    width: 300px;
+    z-index: 1000;
+}
+.rxJsAutoCompleteItem {
+    width: 300px;
+}
 #target {
 	background-color: #efefef;
 	float: left;

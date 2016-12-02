@@ -18,7 +18,7 @@ ko.bindingHandlers.rxjsAutoComplete = {
             .distinctUntilChanged();
         var clearResults = function(el) {
             var results = $(el).next('div');
-            if (results.hasClass('.rxJsAutoCompleteResults')) {
+            if (results.hasClass('rxJsAutoCompleteResults')) {
                 results.remove();
             }
         };
@@ -30,7 +30,7 @@ ko.bindingHandlers.rxjsAutoComplete = {
         rxObservable.subscribe(
             function (data) {
                 var results = source(data);
-                var list = $("<div class='list-group .rxJsAutoCompleteResults'><a href='#' class='list-group-item'>" + results.join("</a><a href='#' class='list-group-item' >") + "</a></div>");
+                var list = $("<div class='list-group rxJsAutoCompleteResults'><a href='#' class='list-group-item rxJsAutoCompleteItem'>" + results.join("</a><a href='#' class='list-group-item rxJsAutoCompleteItem' >") + "</a></div>");
                 list.children('a').click(function(e) {
                     var val = e.currentTarget.text;
                     select(val);
