@@ -2,6 +2,9 @@
 ko.bindingHandlers.rxjsAutoComplete = {
     init: function(element, valueAccessor, allBindings) {
         var source = allBindings.has('source') ? ko.unwrap(allBindings.get('source')) : [];
+        var typeDelayMs = allBindings.has('typeDelayMs') ? ko.unwrap(allBindings.get('typeDelayMs')) : 750;
+        var typeMinLength = allBindings.has('typeMinLength') ? ko.unwrap(allBindings.get('typeMinLength')) : 2;
+
         var obs = valueAccessor();
 
         var rxObservable = Rx.Observable.fromEvent(element, 'keyup')
@@ -9,9 +12,9 @@ ko.bindingHandlers.rxjsAutoComplete = {
                 return e.target.value; // project the text from the input
             })
             .filter(function (text) {
-                return text.length > 2; // only if the text is longer than 2 characters
+                return text.length >= typeMinLength;
             })
-            .debounceTime(750 /* pause for 750ms */ )
+            .debounceTime(typeDelayMs)
             .distinctUntilChanged();
         var select = function(val) {
             obs(val);

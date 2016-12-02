@@ -49,7 +49,7 @@
                 <br/><br/>
                 
                 <label for="autoComplete">Type a character name:&nbsp;&nbsp;</label>
-				<input type="text" id="autoComplete" data-bind="rxjsAutoComplete: selectedCharacter, source: search" >
+				<input type="text" id="autoComplete" data-bind="rxjsAutoComplete: selectedCharacter, source: search, typeDelayMs: 500, typeMinLength: 2" >
                 <br clear="all"><br />
                 <label for="selectedCharacter">Selected Character:&nbsp;&nbsp;</label>
                 <div class="result" id="selectedCharacter" data-bind="text: selectedCharacter"></div>

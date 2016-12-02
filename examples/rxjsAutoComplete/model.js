@@ -6,6 +6,8 @@ $(document).ready(function() {
         
         self.characters = ko.observableArray([
             "Bugs Bunny",
+            "Mickey Mouse",
+            "Minnie Mouse",
             "Elmer Fudd",
             "Marvin Martian",
             "Roadrunner",
