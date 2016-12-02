@@ -16,20 +16,26 @@ ko.bindingHandlers.rxjsAutoComplete = {
             })
             .debounceTime(typeDelayMs)
             .distinctUntilChanged();
+        var clearResults = function(el) {
+            var results = $(el).next('div');
+            if (results.hasClass('.rxJsAutoCompleteResults')) {
+                results.remove();
+            }
+        };
         var select = function(val) {
             obs(val);
             $(element).val(val);
-            $(element).next("div#results").remove();
+            clearResults(element);
         };
         rxObservable.subscribe(
             function (data) {
                 var results = source(data);
-                var list = $("<div class='list-group' id='results'><a href='#' class='list-group-item'>" + results.join("</a><a href='#' class='list-group-item' >") + "</a></div>");
+                var list = $("<div class='list-group .rxJsAutoCompleteResults'><a href='#' class='list-group-item'>" + results.join("</a><a href='#' class='list-group-item' >") + "</a></div>");
                 list.children('a').click(function(e) {
                     var val = e.currentTarget.text;
                     select(val);
                 });
-                $(element).next("div#results").remove();
+                clearResults(element);
                 $(element).after($(list));
             });
         }
