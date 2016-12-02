@@ -34,7 +34,7 @@
 			</header>
 			
 			<section id="main_content">		
-                <label for="characters">Available characters (simple array): </label>
+                <label for="characters">Available characters (simple array): </label><br clear="all" />
                 <div id="characters">
                 [
                 <!-- ko foreach: characters -->
@@ -48,7 +48,7 @@
                 <input type="text" id="characterAdd" data-bind="value: newCharacter"> <button data-bind="click: addCharacter">add</button>
                 <br/><br/>
                 
-                <label for="autoComplete">Type a character name:&nbsp;&nbsp;</label>
+                <label for="autoComplete">Type a character name:&nbsp;&nbsp;(minimum two characters, 500 ms delay)</label><br clear="all" />
 				<input type="text" id="autoComplete" data-bind="rxjsAutoComplete: selectedCharacter, source: search, typeDelayMs: 500, typeMinLength: 2" >
                 <br clear="all"><br />
                 <label for="selectedCharacter">Selected Character:&nbsp;&nbsp;</label>
